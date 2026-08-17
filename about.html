@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Company Name</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; background: var(--bg-light); }
+        
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 10%; background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--text-light); font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+        .container { max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; }
+        h1 { color: var(--primary); margin-bottom: 1.5rem; font-size: 2.5rem; }
+        p { color: var(--text-light); margin-bottom: 1.5rem; font-size: 1.1rem; }
+        
+        .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+        .value-card { background: var(--white); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border-top: 4px solid var(--primary); }
+        .value-card h3 { margin-bottom: 0.5rem; color: var(--primary); }
+
+        footer { background: #111827; color: #9ca3af; text-align: center; padding: 2rem; font-size: 0.9rem; margin-top: 6rem; }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 1rem; padding: 1rem; }
+            .values-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">COMPANY LOGO</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Who We Are</h1>
+        <p>Founded with a vision to make business technology seamless, our company has grown to become a trusted advisor for small and large enterprises globally.</p>
+        <p>We pride ourselves on execution, high-quality material sourcing, and unmatched customer support. Our focus is ensuring your team has the exact assets needed to excel in a highly competitive digital market space.</p>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <h3>Our Mission</h3>
+                <p>To eliminate operational bottlenecks for businesses by providing efficient, turn-key product standards.</p>
+            </div>
+            <div class="value-card">
+                <h3>Our Promise</h3>
+                <p>We back every single asset deployment with dedicated account management and transparent hardware configurations.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Company Name. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
