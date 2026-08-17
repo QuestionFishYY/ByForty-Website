@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Company Name</title>
+    <title>About Us | BY_COMPANY_NAME</title>
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@
 <body>
 
     <nav>
-        <a href="index.html" class="logo">COMPANY LOGO</a>
+        <a href="index.html" class="logo var-company-name"></a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html" class="active">About</a></li>
@@ -54,7 +54,7 @@
 
     <div class="container">
         <h1>Who We Are</h1>
-        <p>Founded with a vision to make business technology seamless, our company has grown to become a trusted advisor for small and large enterprises globally.</p>
+        <p>Founded with a vision to make business technology seamless, <span class="var-company-name"></span> has grown to become a trusted advisor for small and large enterprises globally.</p>
         <p>We pride ourselves on execution, high-quality material sourcing, and unmatched customer support. Our focus is ensuring your team has the exact assets needed to excel in a highly competitive digital market space.</p>
 
         <div class="values-grid">
@@ -64,14 +64,24 @@
             </div>
             <div class="value-card">
                 <h3>Our Promise</h3>
-                <p>We back every single asset deployment with dedicated account management and transparent hardware configurations.</p>
+                <p>We back every single asset deployment with dedicated account management and transparent configurations.</p>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Company Name. All rights reserved.</p>
+        <p>&copy; <span class="var-current-year"></span> <span class="var-company-name"></span>. All rights reserved.</p>
     </footer>
 
+    <!-- CENTRAL VARIABLES CONFIGURATION -->
+    <script>
+        const config = {
+            companyName: "ByForty",
+            currentYear: new Date().getFullYear()
+        };
+        document.querySelectorAll('.var-company-name').forEach(el => el.textContent = config.companyName);
+        document.querySelectorAll('.var-current-year').forEach(el => el.textContent = config.currentYear);
+        document.title = "About Us | " + config.companyName;
+    </script>
 </body>
 </html>
