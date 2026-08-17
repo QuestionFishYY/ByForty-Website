@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products | Company Name</title>
+    <title>Our Products | BY_COMPANY_NAME</title>
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -49,7 +49,7 @@
 <body>
 
     <nav>
-        <a href="index.html" class="logo">COMPANY LOGO</a>
+        <a href="index.html" class="logo var-company-name"></a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -69,21 +69,33 @@
                 <img src="https://unsplash.com" alt="Main Product Model">
             </div>
             <div class="product-details">
-                <h2>The Enterprise Core Hub</h2>
-                <p>Our main hardware module streamlines office networks, secures device handshakes, and reduces data architectural bottlenecks out of the box.</p>
+                <h2 class="var-product-name"></h2>
+                <p>Our primary network architectural module streamlines multi-device environments, protects structural integrity, and manages local asset data securely out of the box.</p>
                 <ul class="features-list">
-                    <li>Industrial grade build quality and long life cycles.</li>
-                    <li>Plug-and-play architectural system integration.</li>
-                    <li>Includes complete manual documentation and guides.</li>
-                    <li>Full 3-year enterprise baseline hardware warranty.</li>
+                    <li>Industrial grade build quality and long asset cycles.</li>
+                    <li>Plug-and-play local systems integration mechanics.</li>
+                    <li>Includes complete architectural manual documentation.</li>
+                    <li>Full 3-year commercial baseline product warranty by <span class="var-company-name"></span>.</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Company Name. All rights reserved.</p>
+        <p>&copy; <span class="var-current-year"></span> <span class="var-company-name"></span>. All rights reserved.</p>
     </footer>
 
+    <!-- CENTRAL VARIABLES CONFIGURATION -->
+    <script>
+        const config = {
+            companyName: "ByForty",
+            productName: "Enterprise Core Hub", // Edit your main product name variable here
+            currentYear: new Date().getFullYear()
+        };
+        document.querySelectorAll('.var-company-name').forEach(el => el.textContent = config.companyName);
+        document.querySelectorAll('.var-product-name').forEach(el => el.textContent = config.productName);
+        document.querySelectorAll('.var-current-year').forEach(el => el.textContent = config.currentYear);
+        document.title = "Products | " + config.companyName;
+    </script>
 </body>
 </html>
