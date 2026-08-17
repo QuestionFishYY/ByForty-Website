@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products | BY_COMPANY_NAME</title>
+    <title>Contact Us | BY_COMPANY_NAME</title>
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1e3a8a;
+            --primary-hover: #1d4ed8;
             --text-dark: #1f2937;
             --text-light: #4b5563;
             --bg-light: #f9fafb;
@@ -24,25 +25,30 @@
         .nav-links a { text-decoration: none; color: var(--text-light); font-weight: 500; }
         .nav-links a:hover, .nav-links a.active { color: var(--primary); }
 
-        .container { max-width: 1000px; margin: 4rem auto; padding: 0 1.5rem; }
-        .header-area { text-align: center; margin-bottom: 4rem; }
-        .header-area h1 { color: var(--primary); font-size: 2.5rem; margin-bottom: 1rem; }
+        .container { max-width: 900px; margin: 4rem auto; padding: 0 1.5rem; }
+        h1 { color: var(--primary); text-align: center; margin-bottom: 3rem; font-size: 2.5rem; }
         
-        .product-focus { display: flex; background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); align-items: center; }
-        .product-image { flex: 1; }
-        .product-image img { width: 100%; height: 100%; object-fit: cover; display: block; max-height: 450px; }
-        .product-details { flex: 1; padding: 3rem; }
-        .product-details h2 { color: var(--primary); margin-bottom: 1rem; font-size: 2rem; }
-        .features-list { list-style: none; margin-top: 1.5rem; }
-        .features-list li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; color: var(--text-light); }
-        .features-list li::before { content: "✓"; color: var(--primary); font-weight: bold; position: absolute; left: 0; }
+        .contact-layout { display: flex; gap: 4rem; }
+        .contact-info { flex: 1; }
+        .contact-info h2 { color: var(--primary); margin-bottom: 1.5rem; }
+        .info-item { margin-bottom: 1.5rem; }
+        .info-item strong { display: block; color: var(--text-dark); margin-bottom: 0.25rem; }
+        .info-item p { color: var(--text-light); }
+
+        /* Contact Form */
+        .contact-form { flex: 1.2; background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem; }
+        .form-group input, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-family: inherit; font-size: 1rem; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15); }
+        .btn-submit { display: block; width: 100%; background: var(--primary); color: var(--white); border: none; padding: 0.8rem; border-radius: 6px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
+        .btn-submit:hover { background: var(--primary-hover); }
 
         footer { background: #111827; color: #9ca3af; text-align: center; padding: 2rem; font-size: 0.9rem; margin-top: 6rem; }
 
         @media (max-width: 768px) {
             nav { flex-direction: column; gap: 1rem; padding: 1rem; }
-            .product-focus { flex-direction: column; }
-            .product-details { padding: 1.5rem; }
+            .contact-layout { flex-direction: column; gap: 2rem; }
         }
     </style>
 </head>
@@ -53,31 +59,47 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="products.html" class="active">Products</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <div class="header-area">
-            <h1>Our Flagship Offering</h1>
-            <p>Engineered for premium performance and reliable daily architecture deployment.</p>
-        </div>
+        <h1>Connect With Our Team</h1>
+        
+        <div class="contact-layout">
+            <div class="contact-info">
+                <h2>Our Office</h2>
+                <div class="info-item">
+                    <strong>Email Address</strong>
+                    <p class="var-email"></p>
+                </div>
+                <div class="info-item">
+                    <strong>Phone Number</strong>
+                    <p class="var-phone"></p>
+                </div>
+                <div class="info-item">
+                    <strong>Headquarters</strong>
+                    <p class="var-address"></p>
+                </div>
+            </div>
 
-        <div class="product-focus">
-            <div class="product-image">
-                <img src="https://unsplash.com" alt="Main Product Model">
-            </div>
-            <div class="product-details">
-                <h2 class="var-product-name"></h2>
-                <p>Our primary network architectural module streamlines multi-device environments, protects structural integrity, and manages local asset data securely out of the box.</p>
-                <ul class="features-list">
-                    <li>Industrial grade build quality and long asset cycles.</li>
-                    <li>Plug-and-play local systems integration mechanics.</li>
-                    <li>Includes complete architectural manual documentation.</li>
-                    <li>Full 3-year commercial baseline product warranty by <span class="var-company-name"></span>.</li>
-                </ul>
-            </div>
+            <!-- Fully Functional Contact Form Handler -->
+            <form class="contact-form" id="contactForm" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="How can we help your business?"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
         </div>
     </div>
 
@@ -89,13 +111,23 @@
     <script>
         const config = {
             companyName: "ByForty",
-            productName: "Enterprise Core Hub", // Edit your main product name variable here
+            email: "info@byforty.com",
+            phone: "+46 (0)8 123 45 67",
+            address: "100 Innovation Way, Suite 400, Tech District, CA 94016",
+            formspreeId: "placeholder", // Swap this out to activate email updates
             currentYear: new Date().getFullYear()
         };
+
+        // Variable variable target matching script
         document.querySelectorAll('.var-company-name').forEach(el => el.textContent = config.companyName);
-        document.querySelectorAll('.var-product-name').forEach(el => el.textContent = config.productName);
         document.querySelectorAll('.var-current-year').forEach(el => el.textContent = config.currentYear);
-        document.title = "Products | " + config.companyName;
+        document.querySelector('.var-email').textContent = config.email;
+        document.querySelector('.var-phone').textContent = config.phone;
+        document.querySelector('.var-address').innerHTML = config.address.replace(", ", "<br>");
+        document.title = "Contact | " + config.companyName;
+
+        // Binds form system directly to backend processor
+        document.getElementById('contactForm').action = "https://formspree.io" + config.formspreeId;
     </script>
 </body>
 </html>
