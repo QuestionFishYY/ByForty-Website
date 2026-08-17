@@ -22,7 +22,20 @@
         
         /* Navigation */
         nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 10%; background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+        .logo-wrapper { 
+            display: flex; 
+            align-items: center; 
+            gap: 0.75rem; /* Puts a clean space between the logo and text */
+            text-decoration: none; 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            color: var(--primary); 
+        }
+        .logo-wrapper img { 
+            height: 35px; /* Adjust this number to scale your logo graphic up or down */
+            width: auto; 
+            display: block;
+        }
         .nav-links { display: flex; list-style: none; gap: 2rem; }
         .nav-links a { text-decoration: none; color: var(--text-light); font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover, .nav-links a.active { color: var(--primary); }
@@ -51,9 +64,10 @@
 <body>
 
     <nav>
-        <a href="index.html" class="logo">
-            <img src="MonaLisa.webp" alt="ByForty Logo" style="height: 40px; width: auto; display: block;">
-</a>
+        <a href="index.html" class="logo-wrapper">
+            <img src="MonaLisa.webp" alt="ByForty Logo">
+            <span class="var-company-name"></span>
+        </a>
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
